@@ -1,4 +1,4 @@
-name: github pages
+name: Build and deploy to Tencent COS
 
 on:
   push:
@@ -46,5 +46,4 @@ jobs:
       
       - name: deploy
         run: 
-          coscmd config -a ${{ secrets.TENCENT_CLOUD_SECRET_ID }} -s ${{ secrets.TENCENT_CLOUD_SECRET_KEY }} -b ${{ secrets.COS_BUCKET }} -r ${{ secrets.COS_REGION }} -m 10
-          coscmd upload -r -s public/ /
+          coscmd config -a ${{ secrets.TENCENT_CLOUD_SECRET_ID }} -s ${{ secrets.TENCENT_CLOUD_SECRET_KEY }} -b ${{ secrets.COS_BUCKET }} -r ${{ secrets.COS_REGION }} -m 10 && coscmd upload -r -s public/ /
