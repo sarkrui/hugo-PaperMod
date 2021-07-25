@@ -1,4 +1,4 @@
-baseURL: "https://adityatelange.github.io/hugo-PaperMod/"
+baseURL: "https://adityatelange.github.io"
 title: PaperMod
 paginate: 5
 theme: hugo-PaperMod
@@ -13,7 +13,7 @@ enableEmoji: true
 
 minify:
     disableXML: true
-    # minifyOutput: true
+    minifyOutput: true
 
 languages:
     en:
