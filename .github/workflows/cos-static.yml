@@ -46,6 +46,5 @@ jobs:
       
       - name: deploy
         run: 
-          $HOME/bin/hugo
           coscmd config -a ${{ secrets.TENCENT_CLOUD_SECRET_ID }} -s ${{ secrets.TENCENT_CLOUD_SECRET_KEY }} -b ${{ secrets.COS_BUCKET }} -r ${{ secrets.COS_REGION }} -m 10
           coscmd upload -r -s public/ /
