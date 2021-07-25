@@ -44,6 +44,10 @@ jobs:
       - name: Install coscmd
         run:  pip install coscmd
       
-      - name: deploy
+      - name: Config coscmd
         run: 
-          coscmd config -a ${{ secrets.TENCENT_CLOUD_SECRET_ID }} -s ${{ secrets.TENCENT_CLOUD_SECRET_KEY }} -b ${{ secrets.COS_BUCKET }} -r ${{ secrets.COS_REGION }} -m 10 && coscmd upload -r -s public/ /
+          coscmd config -a ${{ secrets.TENCENT_CLOUD_SECRET_ID }} -s ${{ secrets.TENCENT_CLOUD_SECRET_KEY }} -b ${{ secrets.COS_BUCKET }} -r ${{ secrets.COS_REGION }} -m 10 
+
+      - name: Upload to cos
+        run:       
+          coscmd upload -r -s public/ /
