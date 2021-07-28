@@ -47,6 +47,27 @@
     transform: scale(0.96);
 }
 
+.post-entry > .entry-cover{
+    display: none;
+}
+
+.post-entry:hover .entry-cover{
+    display: block;
+    /* "both" tells the browser to use the above opacity
+    at the end of the animation (best practice) */
+    -webkit-animation: fade-in 0.5s both;
+    animation: fade-in 0.5s both;
+}
+
+@-webkit-keyframes fade-in {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+@keyframes fade-in {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
 .tag-entry .entry-cover {
     display: none;
 }
@@ -88,6 +109,7 @@
 .entry-isdraft {
     display: inline;
 }
+
 
 .entry-cover {
     margin-bottom: var(--gap);
