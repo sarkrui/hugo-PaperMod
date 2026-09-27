@@ -199,7 +199,8 @@
 }
 
 .post-content pre code {
-    display: grid;
+    /* highlight.js wraps tokens in spans. Grid would put each span on its own row. */
+    display: block;
     margin: auto 0;
     padding: 10px;
     color: rgb(213, 213, 214);
